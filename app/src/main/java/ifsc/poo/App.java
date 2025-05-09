@@ -3,12 +3,32 @@
  */
 package ifsc.poo;
 
+import edu.princeton.cs.algs4.Draw;
+
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
+
+    private Draw draw;
+
+    public App() {
+
+        this.draw = new Draw();
+        this.draw.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
+        this.draw.setCanvasSize(1000,600);
+        this.draw.setXscale(0,1000);
+        this.draw.setYscale(0,600);
+
+        Grade g = new Grade();
+
+        g.desenhar(this.draw);
+        g.desenhar(this.draw);
+
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+
+        App app = new App();
+        app.draw.show();
+
     }
+
 }
