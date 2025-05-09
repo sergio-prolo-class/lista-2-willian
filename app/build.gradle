@@ -16,6 +16,9 @@ repositories {
 }
 
 dependencies {
+
+    implementation files('libs/algs4.jar')
+
     // Use JUnit test framework.
     testImplementation libs.junit
 
