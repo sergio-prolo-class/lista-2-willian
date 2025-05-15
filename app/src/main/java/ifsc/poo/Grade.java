@@ -1,37 +1,71 @@
 package ifsc.poo;
 
 import edu.princeton.cs.algs4.Draw;
-
 import static java.awt.Color.black;
-import static java.awt.Color.yellow;
+import static java.awt.Color.red;
 
 public class Grade {
 
+    private int x;
+    private int y;
+
+    public Grade(int x, int y) {
+
+        if (x <= 0 || y <= 0 || x != y) {
+            this.x = 40;
+            this.y = 40;
+        }
+
+        this.x = x;
+        this.y = y;
+    }
+    
     public void desenhar(Draw d) {
-        //d.rectangle();
 
-        d.setPenColor(yellow);
-        d.filledSquare(0,0,400);
-        //d.filledSquare(0,20,660);
+        // Desenhar linhas horizontais
 
-        d.setPenColor(black);                   // Desenha as linhas
-        d.line(0,400, 400, 400);
-        d.line(0,360, 400, 360);
-        d.line(0,320, 400, 320);
-        d.line(0,280, 400, 280);
-        d.line(0,240, 400, 240);
-        d.line(0,200, 400, 200);
-        d.line(0,160, 400, 160);
-        d.line(0,120, 400, 120);
-        d.line(0,80, 400, 80);
-        d.line(0,40, 400, 40);
-        d.line(0,0, 400, 0);
+        d.setPenColor(black);
 
-        // desenhar quadrado por quadrado em um loop i <
+        int linhaHorizontal = this.y + 400;
+        int linhaVertical = this.x + 400;
+        int contY = this.y;
+        int contX = this.x;
 
-        //d.line(0,100,1000, 100);
-        //d.line(0, 500,1000,500);
-        //d.line(0,400, 1000, 400);
+        for (int i = 0; i <= 10; i++) {
+            d.line(this.x, contY, linhaHorizontal, contY);
+
+            contY += 40;
+        }
+
+        // Desenhar linhas verticais
+
+        for (int i = 0; i <= 10; i++) {
+            d.line(contX, this.y, contX, linhaVertical);
+
+            contX += 40;
+        }
+
+        d.setPenColor(red);
+
+        // Rotulos para as colunas
+
+        int rotuloColuna = this.x + 20;
+
+        for (int i = 0; i < 10; i++) {
+            d.text(rotuloColuna, (this.y - 20), Integer.toString(i));
+
+            rotuloColuna += 40;
+        }
+
+        // Rotulos para as linhas
+
+        int rotuloLinha = this.y + 20;
+
+        for (int i = 0; i < 10; i++) {
+            d.text((this.x - 20), rotuloLinha, (Character.toString((char) 'A' + i)));
+
+            rotuloLinha += 40;
+        }
 
     }
 
