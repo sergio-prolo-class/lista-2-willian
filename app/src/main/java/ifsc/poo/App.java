@@ -32,6 +32,10 @@ public class App {
         n3.desenhar(this.draw);
         n4.desenhar(this.draw);
         n5.desenhar(this.draw);
+
+        Grade g2 = new Grade(560, 40);
+
+        g2.desenhar(this.draw);
     }
 
     public static void main(String[] args) {
