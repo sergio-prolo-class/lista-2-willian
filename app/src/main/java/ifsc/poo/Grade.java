@@ -11,7 +11,7 @@ public class Grade {
 
     public Grade(int x, int y) {
 
-        if (x <= 0 || y <= 0 || x != y) {
+        if (x <= 0 || y <= 0) {
             this.x = 40;
             this.y = 40;
         }
@@ -26,8 +26,8 @@ public class Grade {
 
         d.setPenColor(black);
 
-        int linhaHorizontal = this.y + 400;
-        int linhaVertical = this.x + 400;
+        int linhaHorizontal = this.x + 400;
+        int linhaVertical = this.y + 400;
         int contY = this.y;
         int contX = this.x;
 
@@ -66,7 +66,5 @@ public class Grade {
 
             rotuloLinha += 40;
         }
-
     }
-
 }
