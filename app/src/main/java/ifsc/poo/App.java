@@ -3,12 +3,44 @@
  */
 package ifsc.poo;
 
+import edu.princeton.cs.algs4.Draw;
+
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
+
+    private Draw draw;
+
+    public App() {
+
+        this.draw = new Draw();
+        this.draw.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
+        this.draw.setCanvasSize(1000,600);
+        this.draw.setXscale(0,1000);
+        this.draw.setYscale(0,600);
+
+        Grade g = new Grade(40, 40);
+
+        g.desenhar(this.draw);
+
+        Navio n = new Navio(4, 60, 60, "horizontal");
+        Navio n2 = new Navio(5, 180, 140, "vertical");
+        Navio n3 = new Navio(2, 100, 380, "horizontal");
+        Navio n4 = new Navio(3, 260, 100, "vertical");
+        Navio n5 = new Navio(3, 340, 260, "vertical");
+
+        n.desenhar(this.draw);
+        n2.desenhar(this.draw);
+        n3.desenhar(this.draw);
+        n4.desenhar(this.draw);
+        n5.desenhar(this.draw);
+
+        Grade g2 = new Grade(560, 40);
+
+        g2.desenhar(this.draw);
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+
+        App app = new App();
+        app.draw.show();
     }
 }
