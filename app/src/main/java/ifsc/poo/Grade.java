@@ -47,7 +47,7 @@ public class Grade {
 
         d.setPenColor(red);
 
-        // Rotulos para as colunas
+        // Posicionar rótulos para as colunas
 
         int rotuloColuna = this.x + 20;
 
@@ -57,7 +57,7 @@ public class Grade {
             rotuloColuna += 40;
         }
 
-        // Rotulos para as linhas
+        // Posicionar rótulos para as linhas
 
         int rotuloLinha = this.y + 20;
 
